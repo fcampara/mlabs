@@ -1,0 +1,47 @@
+{
+  "name": "mlabs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "private": true,
+  "author": "Felipe <fcamparasilva@gmail.com>",
+  "license": "MIT",
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "scripts": {
+    "test": "lerna run test --stream",
+    "refresh": "lerna clean -y && lerna bootstrap",
+    "bootstrap": "lerna bootstrap",
+    "dev": "lerna run dev --stream"
+  },
+  "lint-staged": {
+    "src/**/*.js": [
+      "lerna run lint --stream"
+    ],
+    "src/**/*.ts": [
+      "lerna run lint --stream"
+    ],
+    "src/**/*.tsx": [
+      "lerna run lint --stream"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn test"
+    }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "@types/react": "^16.9.55",
+    "husky": "^4.3.0",
+    "lerna": "^3.22.1",
+    "lint-staged": "^10.5.1",
+    "react": "^17.0.1",
+    "typescript": "^4.0.5"
+  }
+}
