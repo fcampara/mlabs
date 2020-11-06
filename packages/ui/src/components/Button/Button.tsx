@@ -1,6 +1,7 @@
 import React from 'react'
 import { ButtonProps } from './types'
-import './button.css'
+import { Button } from './styles'
+// import './button.css'
 
 export const ComponentButton: React.FC<ButtonProps> = ({
   primary = false,
@@ -11,14 +12,14 @@ export const ComponentButton: React.FC<ButtonProps> = ({
 }) => {
   const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary'
   return (
-    <button
+    <Button
       type="button"
       className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
       style={{ backgroundColor }}
       {...props}
     >
       {label}
-    </button>
+    </Button>
   )
 }
 
