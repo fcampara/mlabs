@@ -9,7 +9,6 @@ export const IconButton = styled.button`
   width: 33px;
   height: 33px;
   border: 1px solid ${Colors.border};
-  box-sizing: border-box;
   background: ${Colors.transparent};
   border-radius: 50%;
   cursor: pointer;

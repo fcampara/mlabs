@@ -5,5 +5,5 @@ module.exports = {
   ],
   "addons": [
     "@storybook/addon-links",
-  ]
+  ],
 }

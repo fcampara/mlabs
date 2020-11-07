@@ -41,7 +41,6 @@ export const Button = styled.button`
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
-  line-height: 24px;
   text-align: center;
   background: ${Colors.primary};
   border: none;
@@ -50,7 +49,6 @@ export const Button = styled.button`
   width: 100%;
   transition: color 0.5s ease;
   transition: background-color 0.5s ease;
-  box-sizing: border-box;
   width: 184px;
 
   &:hover {
