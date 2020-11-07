@@ -24,5 +24,8 @@
     "react-is": "^17.0.1",
     "styled-components": "^4.4.0",
     "ts-jest": "^26.4.3"
+  },
+  "dependencies": {
+    "clsx": "^1.1.1"
   }
 }
