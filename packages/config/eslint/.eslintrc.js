@@ -6,7 +6,10 @@ module.exports = {
   },
   extends: [
     'plugin:react/recommended',
-    'standard'
+    'standard',
+    "prettier/@typescript-eslint",
+    "prettier/standard",
+    "prettier/react"
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -18,9 +21,11 @@ module.exports = {
   },
   plugins: [
     'react',
+    'prettier',
     '@typescript-eslint'
   ],
   rules: {
+    'prettier/prettier': 'error',
     'no-use-before-define': 'off',
     'react/prop-types': 'off'
   }
