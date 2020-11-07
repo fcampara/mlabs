@@ -18,7 +18,7 @@ export const IconButton = styled.button`
   overflow: hidden;
   padding: 0 4px;
 
-  &:hover&:not(:disabled) {
+  &:hover&:not(:disabled)&:not(.icon-button__selected) {
     background: ${Colors['secondary-light']};
     border: 1px solid ${Colors['secondary-border']};
   }
