@@ -4,14 +4,12 @@ import { Button } from './styles'
 
 export const ComponentButton: React.FC<ButtonProps> = ({
   label,
-  fullWidth,
   variant
 }) => {
   const variantClassName = variant ? `button--${variant}` : ''
-  const fullWidthClassName = fullWidth ? 'full-width' : ''
   return (
     <Button
-      className={[variantClassName, fullWidthClassName].join(' ')}
+      className={variantClassName}
       type="button"
     >
       {label}
