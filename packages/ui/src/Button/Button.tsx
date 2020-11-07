@@ -5,6 +5,7 @@ import { Button } from './styles'
 
 export const ComponentButton: React.FC<ButtonProps> = ({
   label,
+  children,
   type = 'button',
   className,
   variant,
@@ -20,7 +21,7 @@ export const ComponentButton: React.FC<ButtonProps> = ({
       })}
       type={type}
     >
-      {label}
+      {label || children}
     </Button>
   )
 }

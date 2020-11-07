@@ -28,6 +28,7 @@ const secondary = css`
 const contained = css`
   background: ${Colors.transparent};
   color: ${Colors.primary};
+  width: auto;
 
   &:hover {
     background: ${Colors['primary-light']}

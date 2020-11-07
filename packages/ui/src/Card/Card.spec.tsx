@@ -9,9 +9,7 @@ describe('Card', () => {
     const title = faker.random.word()
     const children = faker.lorem.paragraph()
     const { getByText } = render(
-      <Card title={title}>
-        {children}
-      </Card>
+      <Card title={title}>{children}</Card>
     )
     expect(getByText(title)).toBeInTheDocument()
     expect(getByText(children)).toBeInTheDocument()
