@@ -22,16 +22,17 @@ const DayPickerStyle = css`
       border-radius: 0;
     }
 
-    .DayPicker-Day, .DayPicker-Weekday {
+    .DayPicker-Day,
+    .DayPicker-Weekday {
       font-size: 16px;
-      color: #172B4D;
+      color: #172b4d;
       width: 41px;
       height: 32px;
       text-transform: uppercase;
     }
 
     .DayPicker-Day.DayPicker-Day--selected {
-      border: 3px solid #4C9AFF;
+      border: 3px solid #4c9aff;
       color: #000;
       border-left-width: 6px;
     }
@@ -42,7 +43,7 @@ const DayPickerStyle = css`
 
     .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside) {
       background-color: transparent;
-      color: #0052CC;
+      color: #0052cc;
 
       &:hover {
         background-color: ${Colors['primary-light']};
@@ -50,7 +51,7 @@ const DayPickerStyle = css`
     }
 
     .DayPicker-Day--outside {
-      color: #6B778C;
+      color: #6b778c;
     }
 
     .DayPicker-Weekday {
@@ -65,10 +66,7 @@ export const Container = styled.div`
   border: 1px solid #949494;
   padding: 0 12px;
   height: 42px;
-
-  & > img {
-    margin-right: 10px;
-  }
+  border-radius: 2px;
 
   & > input {
     width: 100%;
@@ -76,4 +74,7 @@ export const Container = styled.div`
   }
 
   ${DayPickerStyle}
+`
+export const Icon = styled.img`
+  margin-right: 10px;
 `

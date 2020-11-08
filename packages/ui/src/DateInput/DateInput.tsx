@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react'
-import { Container } from './styles'
+import { Container, Icon } from './styles'
 import Navigation from './Navigation'
 import DayPickerInput from 'react-day-picker/DayPickerInput'
 import DateSVG from '../icons/date.svg'
@@ -26,7 +26,7 @@ export const ComponentDateInput: React.FC<DateInputProps> = ({
 
   return (
     <Container>
-      <img alt="Icone calendário" src={DateSVG} />
+      <Icon alt="Icone calendario" src={DateSVG} />
       <DayPickerInput
         placeholder="DD/MM"
         value={selectedDate}

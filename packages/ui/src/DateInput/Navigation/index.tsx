@@ -16,14 +16,26 @@ const ComponetDateInputNavigation: React.FC<NavitagionProps> = ({
 
   return (
     <Container>
-      <Button variant="contained" onClick={() => onPreviousClick()}>
-        <img alt="Navegador para esquerda" src={LeftArrowSVG} />
+      <Button
+        variant="contained"
+        onClick={() => onPreviousClick()}
+      >
+        <img
+          alt="Navegador para esquerda"
+          src={LeftArrowSVG}
+        />
       </Button>
       <InfoMonthYear>
         {month} {year}
       </InfoMonthYear>
-      <Button variant="contained" onClick={() => onNextClick()}>
-        <img alt="Navegador para direita" src={RightArrowSVG} />
+      <Button
+        variant="contained"
+        onClick={() => onNextClick()}
+      >
+        <img
+          alt="Navegador para direita"
+          src={RightArrowSVG}
+        />
       </Button>
     </Container>
   )
