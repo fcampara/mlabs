@@ -17,7 +17,16 @@ export const Colors = {
   secondary: '#F2994A',
   'secondary-border': '#EF9F2E',
   'secondary-light': '#FFF3E0',
-  'secondary-gradient': 'linear-gradient(135deg, #EF9F2E 25%, #E02B4B 105.56%)',
+  'secondary-gradient':
+    'linear-gradient(135deg, #EF9F2E 25%, #E02B4B 105.56%)',
   background: '#FFFFFF',
   transparent: 'transparent'
+}
+
+export const Breakpoints = {
+  xs: 320,
+  sm: 600,
+  md: 960,
+  lg: 1366,
+  xl: 1920
 }

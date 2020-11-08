@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Breakpoints } from '../styles/token'
 
 export const Container = styled.form`
   border: 1px dashed #bdbdbd;
@@ -10,6 +11,12 @@ export const Container = styled.form`
   grid-gap: 16px;
   place-items: center;
   background: white;
+
+  @media (max-width: ${Breakpoints.md}px) {
+    .hide-mobile {
+      display: none;
+    }
+  }
 `
 
 export const Message = styled.span`

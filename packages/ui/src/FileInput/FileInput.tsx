@@ -18,8 +18,12 @@ const ComponentFileInput: React.FC = () => {
   )
   return (
     <Container {...getRootProps()}>
-      <img alt="Icone de upload" src={uploaderSVG} />
-      <Message>
+      <img
+        className="hide-mobile"
+        alt="Icone de upload"
+        src={uploaderSVG}
+      />
+      <Message className="hide-mobile">
         Arraste e solte uma imagem aqui ou clique no botão
         abaixo
       </Message>
