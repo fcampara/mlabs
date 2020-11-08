@@ -5,4 +5,5 @@ export interface ButtonProps
   label?: string
   children?: ReactNode
   variant?: 'outline' | 'secondary' | 'contained'
+  size?: 'sm'
 }

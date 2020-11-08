@@ -9,12 +9,14 @@ export const ComponentButton: React.FC<ButtonProps> = ({
   type = 'button',
   className,
   variant,
+  size,
   ...props
 }) => {
   return (
     <Button
       {...props}
       className={clsx(className, {
+        'button--small': size === 'sm',
         'button--contained': variant === 'contained',
         'button--outline': variant === 'outline',
         'button--secondary': variant === 'secondary'

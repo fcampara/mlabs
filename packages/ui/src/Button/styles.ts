@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components'
 import { Colors } from '../styles/token'
 
 const outline = css`
-  background: ${Colors.white};
+  background: ${Colors.transparent};
   border: 1px solid ${Colors.primary};
   border-radius: 4px;
   color: ${Colors.primary};
@@ -31,8 +31,12 @@ const contained = css`
   width: auto;
 
   &:hover {
-    background: ${Colors['primary-light']}
+    background: ${Colors['primary-light']};
   }
+`
+
+const small = css`
+  height: 36px;
 `
 
 export const Button = styled.button`
@@ -51,10 +55,13 @@ export const Button = styled.button`
   transition: color 0.5s ease;
   transition: background-color 0.5s ease;
   width: 184px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &:hover {
     color: ${Colors.primary};
-    background: ${Colors['primary-light']}
+    background: ${Colors['primary-light']};
   }
 
   &.button--outline {
@@ -69,7 +76,7 @@ export const Button = styled.button`
     ${contained}
   }
 
-  &.full-width {
-    width: 100%;
+  &.button--small {
+    ${small}
   }
 `
