@@ -13,13 +13,13 @@ const LayoutDefault: React.FC = ({ children }) => {
       <nav className="header header__container">
         <Link to={HOME}>
           <img className="header__logo" src={LogoSVG} />
+          <Button
+            className="header__menu"
+            variant="contained"
+          >
+            <img src={BarSVG} />
+          </Button>
         </Link>
-        <Button
-          className="header__menu"
-          variant="contained"
-        >
-          <img src={BarSVG} />
-        </Button>
         <div className="header__user">
           <img src={UserSVG} />
           <span className="header__user--name">
