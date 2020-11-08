@@ -5,10 +5,13 @@ import Button, { ButtonProps } from '../src/Button'
 
 export default {
   title: 'Buttons/Button',
-  component: Button
+  component: Button,
+  argTypes: { onClick: { action: 'onClick' } }
 } as Meta
 
-const Template: Story<ButtonProps> = (args) => <Button {...args} />
+const Template: Story<ButtonProps> = args => (
+  <Button {...args} />
+)
 
 export const Primary = Template.bind({})
 Primary.args = {

@@ -12,11 +12,9 @@ export const ComponentIconButton: React.FC<IconButtonProps> = ({
 }) => {
   return (
     <IconButton
-      className={clsx(
-        className, {
-          'icon-button__selected': selected
-        }
-      )}
+      className={clsx(className, {
+        'icon-button__selected': selected
+      })}
       type={type}
       {...props}
     >

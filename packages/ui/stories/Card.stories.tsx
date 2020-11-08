@@ -9,7 +9,9 @@ export default {
   component: Card
 } as Meta
 
-const Template: Story<CardProps> = (args) => <Card {...args} />
+const Template: Story<CardProps> = args => (
+  <Card {...args} />
+)
 
 export const Primary = Template.bind({})
 Primary.args = {

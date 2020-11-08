@@ -67,6 +67,7 @@ export const Container = styled.div`
   padding: 0 12px;
   height: 42px;
   border-radius: 2px;
+  background: white;
 
   & > input {
     width: 100%;

@@ -5,7 +5,8 @@ import DateInput, { DateInputProps } from '../src/DateInput'
 
 export default {
   title: 'Inputs/Date',
-  component: DateInput
+  component: DateInput,
+  argTypes: { onChange: { action: 'onChange' } }
 } as Meta
 
 const Template: Story<DateInputProps> = args => (
