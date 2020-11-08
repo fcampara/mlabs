@@ -1,6 +1,9 @@
-export * from './Button'
-export * from './DateInput'
-export * from './Dialog'
-export * from './Divider'
-export * from './FileInput'
-export * from './IconButton'
+export { default as Button, ButtonProps } from './Button'
+export {
+  default as DateInput,
+  DateInputProps
+} from './DateInput'
+export { default as Dialog, DialogProps } from './Dialog'
+export { default as Divider } from './Divider'
+export { default as FileInput } from './FileInput'
+export { default as IconButton } from './IconButton'

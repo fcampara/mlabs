@@ -7,9 +7,9 @@ module.exports = {
   extends: [
     'plugin:react/recommended',
     'standard',
-    "prettier/@typescript-eslint",
-    "prettier/standard",
-    "prettier/react"
+    'prettier/@typescript-eslint',
+    'prettier/standard',
+    'prettier/react'
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -19,12 +19,9 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: 'module'
   },
-  plugins: [
-    'react',
-    'prettier',
-    '@typescript-eslint'
-  ],
+  plugins: ['react', 'prettier', '@typescript-eslint'],
   rules: {
+    'space-before-function-paren': 'off',
     'prettier/prettier': 'error',
     'no-use-before-define': 'off',
     'react/prop-types': 'off'

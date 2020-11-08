@@ -1,8 +1,9 @@
 {
   "name": "@mlabs/ui",
-  "main": "dist/index.js",
-  "version": "0.1.0",
-  "private": true,
+  "main": "dist",
+  "author": "Felipe Campara",
+  "version": "1.0.0",
+  "private": false,
   "scripts": {
     "dev": "start-storybook -p 6006 -s public --no-dll",
     "build": "tsc -p .",
