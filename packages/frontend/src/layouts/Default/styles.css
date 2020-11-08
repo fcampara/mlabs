@@ -1,0 +1,46 @@
+.header {
+  height: 80px;
+  padding: 16px 40px;
+  background: var(--white);
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__user {
+  display: flex;
+  grid-gap: 16px;
+  place-items: center;
+}
+
+.header__menu {
+  display: none;
+}
+
+.main {
+  padding: 40px 50px;
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 16px 20px;
+  }
+
+  .header__user--name {
+    display: none;
+  }
+
+  .header__logo {
+     display: none;
+  }
+
+  .header__menu {
+    display: block;
+  }
+
+  .main {
+    padding: 30px 16px;
+  }
+}

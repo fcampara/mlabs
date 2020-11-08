@@ -1,0 +1,23 @@
+:root {
+  --background: #F8F8F8;
+  --white: #FFF;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*,
+input,
+button {
+  font-family: Poppins;
+}
+
+html {
+  background: var(--background);
+  height: 100vh;
+  width: 100vw;
+}
