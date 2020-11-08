@@ -23,4 +23,4 @@ export const ComponentIconButton: React.FC<IconButtonProps> = ({
   )
 }
 
-export default ComponentIconButton
+export default React.memo(ComponentIconButton)

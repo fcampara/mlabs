@@ -1,0 +1,5 @@
+.schedule__social-media {
+  grid-area: social-media;
+  display: flex;
+  grid-gap: 16px;
+}

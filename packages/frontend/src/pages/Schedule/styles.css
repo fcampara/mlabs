@@ -1,0 +1,23 @@
+.schedule__container {
+  display: grid;
+  grid-template-columns: .5fr .5fr 1fr;
+  grid-gap: 40px;
+  grid-template-areas:
+    "social-media publish-date post"
+    "text-post text-post post"
+    "upload-image upload-image post";
+}
+
+@media (max-width: 768px) {
+  .schedule__container {
+    grid-gap: 20px;
+    margin-bottom: var(--header-size);
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "social-media"
+      "publish-date"
+      "text-post"
+      "upload-image"
+      "post";
+  }
+}

@@ -1,6 +1,7 @@
-import { ReactNode } from 'react'
+import { ReactNode, HTMLAttributes } from 'react'
 
-export interface CardProps {
-  title: string;
+export interface CardProps
+  extends HTMLAttributes<HTMLDivElement> {
+  title: string
   children: ReactNode
 }

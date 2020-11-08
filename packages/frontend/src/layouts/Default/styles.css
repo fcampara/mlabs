@@ -19,6 +19,10 @@
   display: none;
 }
 
+.header__link {
+  display: flex;
+}
+
 .main {
   padding: 40px 50px;
   height: calc(100vh - var(--header-size))

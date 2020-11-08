@@ -1,14 +1,14 @@
-import React, { useCallback } from 'react'
+import React from 'react'
 import { useDropzone } from 'react-dropzone'
 import { Container, Message } from './styles'
 import Button from '../Button'
 import uploaderSVG from '../icons/uploader.svg'
 
 const ComponentFileInput: React.FC = () => {
-  const onDrop = useCallback(acceptedFiles => {
+  const onDrop = (acceptedFiles: any) => {
     console.log(acceptedFiles)
     // Do something with the files
-  }, [])
+  }
   const { getRootProps, open, getInputProps } = useDropzone(
     {
       onDrop,
@@ -38,4 +38,4 @@ const ComponentFileInput: React.FC = () => {
   )
 }
 
-export default ComponentFileInput
+export default React.memo(ComponentFileInput)

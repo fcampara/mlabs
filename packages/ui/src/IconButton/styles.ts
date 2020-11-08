@@ -16,6 +16,9 @@ export const IconButton = styled.button`
   transition: background-color 0.5s ease;
   overflow: hidden;
   padding: 0 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   &:hover&:not(:disabled)&:not(.icon-button__selected) {
     background: ${Colors['secondary-light']};
@@ -29,5 +32,6 @@ export const IconButton = styled.button`
   &:disabled {
     color: ${Colors.gray};
     background: ${Colors.disabled};
+    cursor: auto;
   }
 `

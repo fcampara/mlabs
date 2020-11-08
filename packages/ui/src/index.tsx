@@ -1,4 +1,5 @@
 export { default as Button, ButtonProps } from './Button'
+export { default as Card } from './Card'
 export {
   default as DateInput,
   DateInputProps

@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react'
+import React from 'react'
 import { Container, Icon } from './styles'
 import Navigation from './Navigation'
 import DayPickerInput from 'react-day-picker/DayPickerInput'
@@ -15,29 +15,20 @@ export const ComponentDateInput: React.FC<DateInputProps> = ({
   onChange,
   value
 }) => {
-  const [selectedDate, setSelectedDate] = useState<
-    Date | undefined
-  >(value)
-
-  const handleDayClick = useCallback((day: Date) => {
-    setSelectedDate(day)
-    onChange(day)
-  }, [])
-
   return (
     <Container>
       <Icon alt="Icone calendario" src={DateSVG} />
       <DayPickerInput
         placeholder="DD/MM"
-        value={selectedDate}
+        value={value}
         formatDate={formatDatePTBR}
         format="LL"
-        onDayChange={handleDayClick}
+        onDayChange={day => onChange(day)}
         dayPickerProps={{
           navbarElement: Navigation,
           showOutsideDays: true,
           locale: 'pt-BR',
-          selectedDays: selectedDate,
+          selectedDays: value,
           months: MONTHS,
           weekdaysLong: WEEKDAYS_LONG,
           weekdaysShort: WEEKDAYS_SHORT
@@ -47,4 +38,4 @@ export const ComponentDateInput: React.FC<DateInputProps> = ({
   )
 }
 
-export default ComponentDateInput
+export default React.memo(ComponentDateInput)

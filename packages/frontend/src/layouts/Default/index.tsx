@@ -11,7 +11,7 @@ const LayoutDefault: React.FC = ({ children }) => {
   return (
     <>
       <nav className="header header__container">
-        <Link to={HOME}>
+        <Link className="header__link" to={HOME}>
           <img className="header__logo" src={LogoSVG} />
           <Button
             className="header__menu"
