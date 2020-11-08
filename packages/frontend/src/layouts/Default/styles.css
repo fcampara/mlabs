@@ -1,5 +1,5 @@
 .header {
-  height: 80px;
+  height: var(--header-size);
   padding: 16px 40px;
   background: var(--white);
 }
@@ -21,6 +21,7 @@
 
 .main {
   padding: 40px 50px;
+  height: calc(100vh - var(--header-size))
 }
 
 @media (max-width: 768px) {

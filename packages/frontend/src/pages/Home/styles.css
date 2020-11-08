@@ -1,0 +1,18 @@
+.home__container {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  grid-gap: 64px;
+  align-items: center;
+  justify-content: center;
+}
+
+.home__image {
+  max-height: 460px;
+}
+
+@media (max-width: 768px) {
+  .home__image {
+    max-height: 320px;
+}
+}

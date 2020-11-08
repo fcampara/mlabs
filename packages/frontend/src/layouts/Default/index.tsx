@@ -4,12 +4,16 @@ import UserSVG from 'src/assets/user.svg'
 import LogoSVG from 'src/assets/logo.svg'
 import BarSVG from 'src/assets/bar.svg'
 import 'src/layouts/Default/styles.css'
+import { HOME } from 'src/routes/constants'
+import { Link } from 'react-router-dom'
 
 const LayoutDefault: React.FC = ({ children }) => {
   return (
     <>
       <nav className="header header__container">
-        <img className="header__logo" src={LogoSVG} />
+        <Link to={HOME}>
+          <img className="header__logo" src={LogoSVG} />
+        </Link>
         <Button
           className="header__menu"
           variant="contained"
