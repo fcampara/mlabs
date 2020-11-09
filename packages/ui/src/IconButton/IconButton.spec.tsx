@@ -7,14 +7,20 @@ import IconButton from './IconButton'
 describe('IconButton', () => {
   test('render icon buttons', () => {
     const children = String(faker.random.number())
-    const { getByText } = render(<IconButton>{children}</IconButton>)
+    const { getByText } = render(
+      <IconButton>{children}</IconButton>
+    )
     expect(getByText(children)).toBeInTheDocument()
   })
   describe('When pass props selected', () => {
     it('Must have class "icon-button__selected"', () => {
       const children = String(faker.random.number())
-      const { getByText } = render(<IconButton selected>{children}</IconButton>)
-      expect(getByText(children)).toHaveClass('icon-button__selected')
+      const { getByText } = render(
+        <IconButton selected>{children}</IconButton>
+      )
+      expect(getByText(children)).toHaveClass(
+        'icon-button__selected'
+      )
     })
   })
 })
