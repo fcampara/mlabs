@@ -17,6 +17,9 @@ const Template: Story<CardSocialProps> = args => (
 
 export const Instagram = Template.bind({})
 Instagram.args = {
+  userName: name.findName(),
+  post: lorem.paragraph(),
+  image: image.imageUrl(),
   social: 'instagram'
 }
 

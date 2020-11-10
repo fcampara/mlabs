@@ -1,4 +1,5 @@
 import React from 'react'
+import Divider from '../../Divider'
 import Header from './Header'
 import { Actions, Comments, Img } from './styles'
 import ThumbsUpSVG from '../../assets/icons/thumbs-up.svg'
@@ -17,6 +18,7 @@ const ComponentSocialLinkedin: React.FC<CardLinkedindProps> = ({
       <Header userName={userName} date={date} post={post} />
       <Img src={image} />
       <Comments>5 comentários</Comments>
+      <Divider />
       <Actions>
         <img src={ThumbsUpSVG} />
         <img src={CommentSVG} />
