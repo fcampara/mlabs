@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 import 'react-day-picker/lib/style.css'
-import { Colors } from '../styles/token'
+import { Colors } from '../assets/styles/token'
 
 const DayPickerStyle = css`
   & {

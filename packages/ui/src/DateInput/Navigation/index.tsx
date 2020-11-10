@@ -3,8 +3,8 @@ import { NavitagionProps } from './types'
 import Button from '../../Button'
 import { Container, InfoMonthYear } from './styles'
 import { MONTHS } from '../utils'
-import LeftArrowSVG from '../../icons/leftArrow.svg'
-import RightArrowSVG from '../../icons/rightArrow.svg'
+import LeftArrowSVG from '../../assets/icons/leftArrow.svg'
+import RightArrowSVG from '../../assets/icons/rightArrow.svg'
 
 const ComponetDateInputNavigation: React.FC<NavitagionProps> = ({
   month: date,

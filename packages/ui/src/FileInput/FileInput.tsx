@@ -2,7 +2,7 @@ import React from 'react'
 import { useDropzone } from 'react-dropzone'
 import { Container, Message } from './styles'
 import Button from '../Button'
-import uploaderSVG from '../icons/uploader.svg'
+import uploaderSVG from '../assets/icons/uploader.svg'
 
 const ComponentFileInput: React.FC = () => {
   const onDrop = (acceptedFiles: any) => {

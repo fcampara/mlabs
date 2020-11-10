@@ -1,5 +1,5 @@
 import React from 'react'
-import TimeSVG from '../icons/time.svg'
+import TimeSVG from '../assets/icons/time.svg'
 import { Container, Icon } from './styles'
 import { formatTime } from './utils'
 import { TimeInputProps } from './types'

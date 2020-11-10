@@ -2,7 +2,7 @@ import React from 'react'
 import { Container, Icon } from './styles'
 import Navigation from './Navigation'
 import DayPickerInput from 'react-day-picker/DayPickerInput'
-import DateSVG from '../icons/date.svg'
+import DateSVG from '../assets/icons/date.svg'
 import {
   MONTHS,
   WEEKDAYS_LONG,

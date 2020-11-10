@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Breakpoints } from '../styles/token'
+import { Breakpoints } from '../assets/styles/token'
 
 export const Container = styled.form`
   border: 1px dashed #bdbdbd;

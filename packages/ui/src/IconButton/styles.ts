@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { Colors } from '../styles/token'
+import { Colors } from '../assets/styles/token'
 
 const selected = css`
   background: ${Colors['secondary-gradient']};

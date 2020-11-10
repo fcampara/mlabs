@@ -1,5 +1,13 @@
 export const FORMAT = 'DD/MM'
-export const WEEKDAYS_SHORT = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab']
+export const WEEKDAYS_SHORT = [
+  'Dom',
+  'Seg',
+  'Ter',
+  'Qua',
+  'Qui',
+  'Sex',
+  'Sab'
+]
 export const WEEKDAYS_LONG = [
   'Domingo',
   'Segunda',
@@ -24,9 +32,12 @@ export const MONTHS = [
   'Dezembro'
 ]
 
-export const formatDatePTBR = (date: Date) => {
+export const formatDatePTBR = (
+  date: Date,
+  month: 'long' | '2-digit' = '2-digit'
+) => {
   return new Intl.DateTimeFormat('pt-BR', {
     day: '2-digit',
-    month: '2-digit'
+    month
   }).format(date)
 }

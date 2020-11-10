@@ -7,9 +7,9 @@
   "compilerOptions": {
     "skipLibCheck": true,
     "target": "es6",
-    "module": "es6",
+    "module": "es2020",
     "lib": [
-      "es6",
+      "es2020",
       "dom"
     ],
     "jsx": "react",
