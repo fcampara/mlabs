@@ -19,7 +19,7 @@ export const ComponentDateInput: React.FC<DateInputProps> = ({
     <Container>
       <Icon alt="Icone calendario" src={DateSVG} />
       <DayPickerInput
-        placeholder="DD/MM"
+        placeholder="DD/MM/YYYY"
         value={value}
         formatDate={date => formatDatePTBR(date)}
         format="LL"

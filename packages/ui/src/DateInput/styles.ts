@@ -68,6 +68,7 @@ export const Container = styled.div`
   height: 42px;
   border-radius: 2px;
   background: white;
+  flex: 1;
 
   & > input {
     width: 100%;

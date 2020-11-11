@@ -4,7 +4,8 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 16px;
+  padding: 16px;
+  padding-top: 32px;
 `
 
 export const InfoMonthYear = styled.span`

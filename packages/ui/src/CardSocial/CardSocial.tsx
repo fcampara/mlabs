@@ -21,7 +21,6 @@ const ComponentCardSocial: React.FC<CardSocialProps> = ({
 }) => {
   const [Card, setCard] = useState<React.FC>()
 
-  console.log(props)
   useEffect(() => {
     const card = lazy(() => FILES[social])
 

@@ -7,6 +7,13 @@ const outline = css`
   border-radius: 4px;
   color: ${Colors.primary};
 
+  &:disabled {
+    cursor: default;
+    pointer-events: none;
+    color: rgba(0, 0, 0, 0.26);
+    border-color: rgba(0, 0, 0, 0.26);
+  }
+
   &:hover {
     color: ${Colors.white};
     background: ${Colors.primary};
@@ -19,6 +26,13 @@ const secondary = css`
   border-radius: 4px;
   color: ${Colors.white};
 
+  &:disabled {
+    cursor: default;
+    pointer-events: none;
+    color: rgba(0, 0, 0, 0.26);
+    background-color: rgba(0, 0, 0, 0.12);
+  }
+
   &:hover {
     color: ${Colors.secondary};
     background: ${Colors['secondary-light']};
@@ -29,6 +43,12 @@ const contained = css`
   background: ${Colors.transparent};
   color: ${Colors.primary};
   width: auto;
+
+  &:disabled {
+    cursor: default;
+    pointer-events: none;
+    color: rgba(0, 0, 0, 0.26);
+  }
 
   &:hover {
     background: ${Colors['primary-light']};
@@ -58,6 +78,13 @@ export const Button = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  &:disabled {
+    cursor: default;
+    pointer-events: none;
+    color: rgba(0, 0, 0, 0.26);
+    background-color: rgba(0, 0, 0, 0.12);
+  }
 
   &:hover {
     color: ${Colors.primary};
