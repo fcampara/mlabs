@@ -10,11 +10,12 @@ import FacebookSVG from 'src/assets/facebook.svg'
 import { SocialMidias } from 'src/@types/socialMidias'
 import { useFormContext } from 'react-hook-form'
 import { ISchedulePost } from '../types'
+import { FORM_NAME } from '../formInfo'
 
 const ComponentSocialMedia: React.FC = () => {
   const { setValue, register, watch } = useFormContext()
   const formSocialMidias = watch(
-    'socialMidias'
+    FORM_NAME.SOCIAL_MIDIAS
   ) as ISchedulePost['socialMidias']
 
   const getIndexSocialMidia = useCallback(
@@ -34,7 +35,9 @@ const ComponentSocialMedia: React.FC = () => {
         ? socialMidias.splice(index, 1)
         : socialMidias.push(socialMidia)
 
-      setValue('socialMidias', socialMidias)
+      setValue(FORM_NAME.SOCIAL_MIDIAS, socialMidias, {
+        shouldDirty: true
+      })
     },
     [setValue, getIndexSocialMidia]
   )
@@ -46,7 +49,7 @@ const ComponentSocialMedia: React.FC = () => {
   )
 
   useEffect(() => {
-    register('socialMidias')
+    register(FORM_NAME.SOCIAL_MIDIAS)
   }, [register])
 
   return (

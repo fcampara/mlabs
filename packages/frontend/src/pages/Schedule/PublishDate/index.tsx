@@ -2,6 +2,7 @@ import React from 'react'
 import { Card, DateInput, TimeInput } from '@mlabs/ui'
 import 'src/pages/Schedule/PublishDate/styles.css'
 import { Controller } from 'react-hook-form'
+import { FORM_NAME } from 'src/pages/Schedule/formInfo'
 
 const ComponentPublishDate: React.FC = () => {
   return (
@@ -11,13 +12,13 @@ const ComponentPublishDate: React.FC = () => {
     >
       <div className="schedule--publish-date container">
         <Controller
-          name="scheduleIn"
+          name={FORM_NAME.SCHEDULE_IN}
           render={({ value, onChange }) => (
             <DateInput value={value} onChange={onChange} />
           )}
         />
         <Controller
-          name="scheduleAt"
+          name={FORM_NAME.SCHEDULE_AT}
           render={({ value, onChange }) => (
             <TimeInput value={value} onChange={onChange} />
           )}

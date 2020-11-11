@@ -8,19 +8,15 @@ import Footer from 'src/pages/Schedule/Footer'
 import 'src/pages/Schedule/styles.css'
 import { FormProvider, useForm } from 'react-hook-form'
 import { ISchedulePost } from 'src/pages/Schedule/types'
+import { defaultValues } from 'src/pages/Schedule/formInfo'
+import { Prompt } from 'react-router-dom'
 
 const PageSchedule: React.FC = () => {
   const methods = useForm<ISchedulePost>({
-    defaultValues: {
-      imageUrl: '',
-      post: '',
-      scheduleAt: '',
-      scheduleIn: '',
-      socialMidias: [],
-      username: 'Anselmo Carlos'
-    }
+    defaultValues
   })
-  const { handleSubmit } = methods
+  const { handleSubmit, formState } = methods
+  const { isDirty } = formState
 
   const onSubmit = useCallback(
     (schedulePost: ISchedulePost) => {
@@ -30,19 +26,27 @@ const PageSchedule: React.FC = () => {
   )
 
   return (
-    <FormProvider {...methods}>
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        className="schedule__container"
-      >
-        <SocialMedia />
-        <PublishDate />
-        <TextPost />
-        <UploadeImage />
-        <RenderPost />
-      </form>
-      <Footer />
-    </FormProvider>
+    <>
+      <Prompt
+        when={isDirty}
+        message={() =>
+          'Existem alterações não salvas. Se deseja salvá-las, clique em "Cancelar" e depois em "Salvar Rascunho"'
+        }
+      />
+      <FormProvider {...methods}>
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="schedule__container"
+        >
+          <SocialMedia />
+          <PublishDate />
+          <TextPost />
+          <UploadeImage />
+          <RenderPost />
+          <Footer />
+        </form>
+      </FormProvider>
+    </>
   )
 }
 

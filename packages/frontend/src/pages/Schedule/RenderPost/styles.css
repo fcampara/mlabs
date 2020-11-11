@@ -1,3 +1,10 @@
 .schedule--post {
   grid-area: post;
 }
+
+.schedule--post.container {
+  display: flex;
+  grid-gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 16px;
+}
