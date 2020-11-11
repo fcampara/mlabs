@@ -1,3 +1,8 @@
+.schedule--publish-date.container {
+  display: flex;
+  grid-gap: 29px;
+}
+
 .schedule--publish-date {
   grid-area: publish-date;
 }

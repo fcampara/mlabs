@@ -8,7 +8,7 @@ const ComponentUploadImage: React.FC = () => {
       title="Upload de imagem"
       className="schedule--upload-image"
     >
-      <FileInput />
+      <FileInput onChange={file => console.log(file)} />
     </Card>
   )
 }
