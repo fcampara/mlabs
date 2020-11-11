@@ -1,9 +1,9 @@
-import { SocialMidias } from 'src/@types/socialMidias'
+import { SocialNetwork } from 'src/@types/socialNetworks'
 
 export interface ISchedulePost {
   scheduleIn: Date
   scheduleAt: string
-  socialMidias: SocialMidias[]
+  socialMidias: SocialNetwork[]
   post: string
   imageUrl: string
   username: string

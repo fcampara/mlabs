@@ -24,6 +24,7 @@ const ComponentRenderPost: React.FC = () => {
     FORM_NAME.IMAGE_URL
   ) as ISchedulePost['imageUrl']
 
+  console.log(socialMidias)
   return (
     <Card
       title="Visualização do post"
@@ -33,8 +34,8 @@ const ComponentRenderPost: React.FC = () => {
         {!socialMidias.length && <EmptyState />}
         {socialMidias.map(social => (
           <CardSocial
-            key={social}
-            social={social}
+            key={social.id}
+            social={social.name}
             image={image}
             username={username}
             post={post}

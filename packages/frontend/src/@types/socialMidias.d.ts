@@ -1,1 +1,1 @@
-export type SocialMidias = 'instagram' | 'linkedin'
+export type SocialMidias = 'Instagram' | 'Linkedin'

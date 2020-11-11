@@ -1,40 +1,42 @@
-import React, { useCallback, useEffect } from 'react'
+import React, {
+  useCallback,
+  useEffect,
+  useState
+} from 'react'
 import { Card, IconButton } from '@mlabs/ui'
 import 'src/pages/Schedule/SocialMedia/styles.css'
-import InstagramSVG from 'src/assets/instagram.svg'
-import LinkedinSVG from 'src/assets/linkedin.svg'
-import YoutubeSVG from 'src/assets/youtube.svg'
-import PinterestSVG from 'src/assets/pinterest.svg'
-import TwitterSVG from 'src/assets/twitter.svg'
-import FacebookSVG from 'src/assets/facebook.svg'
-import { SocialMidias } from 'src/@types/socialMidias'
 import { useFormContext } from 'react-hook-form'
 import { ISchedulePost } from '../types'
 import { FORM_NAME } from '../formInfo'
+import { SocialNetwork } from 'src/@types/socialNetworks'
+import { getAllSocialNetworks } from 'src/services/socialNetworks'
 
 const ComponentSocialMedia: React.FC = () => {
-  const { setValue, register, watch } = useFormContext()
+  const [socialNetworks, setSocialNetworks] = useState<
+    SocialNetwork[]
+  >()
+  const { setValue, watch } = useFormContext()
   const formSocialMidias = watch(
     FORM_NAME.SOCIAL_MIDIAS
   ) as ISchedulePost['socialMidias']
-
   const getIndexSocialMidia = useCallback(
-    socialMidia => {
+    (socialMidia: SocialNetwork) => {
       return formSocialMidias.findIndex(
-        midia => midia === socialMidia
+        midia => midia.id === socialMidia.id
       )
     },
     [formSocialMidias]
   )
 
   const handleSelectSocialMidia = useCallback(
-    (socialMidia: SocialMidias) => () => {
+    (socialMidia: SocialNetwork) => () => {
       const socialMidias = formSocialMidias
       const index = getIndexSocialMidia(socialMidia)
       index >= 0
         ? socialMidias.splice(index, 1)
         : socialMidias.push(socialMidia)
 
+      console.log('setValue')
       setValue(FORM_NAME.SOCIAL_MIDIAS, socialMidias, {
         shouldDirty: true
       })
@@ -43,45 +45,39 @@ const ComponentSocialMedia: React.FC = () => {
   )
 
   const isSelected = useCallback(
-    (socialMidia: SocialMidias) =>
-      formSocialMidias.some(midia => socialMidia === midia),
+    (socialMidia: SocialNetwork) => {
+      return formSocialMidias.some(
+        midia => socialMidia.id === midia.id
+      )
+    },
     [formSocialMidias]
   )
 
   useEffect(() => {
-    register(FORM_NAME.SOCIAL_MIDIAS)
-  }, [register])
+    async function fetchSocialNetworks() {
+      const responseSocialNetworks = await getAllSocialNetworks()
+      setSocialNetworks(responseSocialNetworks)
+    }
+
+    fetchSocialNetworks()
+  }, [])
 
   return (
     <Card title="Redes sociais">
       <div className="schedule__social-media">
-        <IconButton
-          selected={isSelected('instagram')}
-          onClick={handleSelectSocialMidia('instagram')}
-        >
-          <img alt="Icone instagram" src={InstagramSVG} />
-        </IconButton>
-        <IconButton
-          selected={isSelected('linkedin')}
-          onClick={handleSelectSocialMidia('linkedin')}
-        >
-          <img alt="Icone linkedin" src={LinkedinSVG} />
-        </IconButton>
-        <IconButton disabled>
-          <img alt="Icone Youtube" src={YoutubeSVG} />
-        </IconButton>
-        <IconButton disabled>
-          <img alt="Icone Pinterest" src={PinterestSVG} />
-        </IconButton>
-        <IconButton disabled>
-          <img alt="Icone Twitter" src={TwitterSVG} />
-        </IconButton>
-        <IconButton disabled>
-          <img alt="Icone Facebook" src={FacebookSVG} />
-        </IconButton>
+        {socialNetworks?.map(socialNetwork => (
+          <IconButton
+            disabled={socialNetwork.status === 'disabled'}
+            key={socialNetwork.id}
+            selected={isSelected(socialNetwork)}
+            onClick={handleSelectSocialMidia(socialNetwork)}
+          >
+            <i className={`fab fa-${socialNetwork.icon}`} />
+          </IconButton>
+        ))}
       </div>
     </Card>
   )
 }
 
-export default React.memo(ComponentSocialMedia)
+export default ComponentSocialMedia

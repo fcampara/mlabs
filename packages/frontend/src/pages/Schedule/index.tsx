@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import React, { useCallback, useEffect } from 'react'
 import SocialMedia from 'src/pages/Schedule/SocialMedia'
 import PublishDate from 'src/pages/Schedule/PublishDate'
 import UploadeImage from 'src/pages/Schedule/UploadeImage'
@@ -15,15 +15,29 @@ const PageSchedule: React.FC = () => {
   const methods = useForm<ISchedulePost>({
     defaultValues
   })
-  const { handleSubmit, formState } = methods
+  const {
+    reset,
+    register,
+    handleSubmit,
+    formState
+  } = methods
   const { isDirty } = formState
-
   const onSubmit = useCallback(
     (schedulePost: ISchedulePost) => {
       console.log('submit', schedulePost)
     },
     []
   )
+
+  useEffect(() => {
+    reset({
+      socialMidias: []
+    })
+  }, [reset])
+
+  useEffect(() => {
+    register('socialMidias')
+  }, [register])
 
   return (
     <>
@@ -50,4 +64,4 @@ const PageSchedule: React.FC = () => {
   )
 }
 
-export default React.memo(PageSchedule)
+export default PageSchedule
