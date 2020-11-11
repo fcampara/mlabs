@@ -11,8 +11,8 @@ import {
 import { Container } from './styles'
 
 const FILES: CardSocialFileProps = {
-  instagram: import('./Instagram'),
-  linkedin: import('./Linkedin')
+  Instagram: import('./Instagram'),
+  Linkedin: import('./Linkedin')
 }
 
 const ComponentCardSocial: React.FC<CardSocialProps> = ({

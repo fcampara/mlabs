@@ -2,12 +2,14 @@ import styled, { css } from 'styled-components'
 import { Colors } from '../assets/styles/token'
 
 const selected = css`
+  color: white;
   background: ${Colors['secondary-gradient']};
 `
 
 export const IconButton = styled.button`
   width: 33px;
   height: 33px;
+  font-size: 16px;
   border: 1px solid ${Colors.border};
   background: ${Colors.transparent};
   border-radius: 50%;
@@ -23,6 +25,7 @@ export const IconButton = styled.button`
   &:hover&:not(:disabled)&:not(.icon-button__selected) {
     background: ${Colors['secondary-light']};
     border: 1px solid ${Colors['secondary-border']};
+    color: ${Colors['secondary-border']};
   }
 
   &.icon-button__selected {

@@ -6,6 +6,8 @@ import uploaderSVG from '../assets/icons/uploader.svg'
 import { FileInputProps } from './types'
 
 const ComponentFileInput: React.FC<FileInputProps> = ({
+  label,
+  disabled,
   onChange
 }) => {
   const onDrop = (acceptedFiles: any) => {
@@ -34,7 +36,8 @@ const ComponentFileInput: React.FC<FileInputProps> = ({
       <Button
         size="sm"
         variant="outline"
-        label="Pesquisar imagens"
+        label={label || 'Pesquisar imagens'}
+        disabled={disabled}
         onClick={open}
       />
     </Container>
