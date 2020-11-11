@@ -20,7 +20,9 @@ const ComponentSocialInstagram: React.FC<InstagramProps> = ({
         />
         <span>{username}</span>
       </div>
-      <img className="instagram__image" src={image} />
+      {image && (
+        <img className="instagram__image" src={image} />
+      )}
       <div className="instagram__footer">
         <div className="instagram__actions">
           <div>

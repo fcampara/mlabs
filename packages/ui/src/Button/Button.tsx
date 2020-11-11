@@ -23,7 +23,7 @@ export const ComponentButton: React.FC<ButtonProps> = ({
       })}
       type={type}
     >
-      {label || children}
+      {children || label}
     </Button>
   )
 }

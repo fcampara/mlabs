@@ -16,7 +16,7 @@ const ComponentSocialLinkedin: React.FC<CardLinkedindProps> = ({
   return (
     <div>
       <Header username={username} date={date} post={post} />
-      <Img src={image} />
+      {image && <Img src={image} />}
       <Comments>5 comentários</Comments>
       <Divider />
       <Actions>
