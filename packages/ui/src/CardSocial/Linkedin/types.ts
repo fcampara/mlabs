@@ -1,5 +1,5 @@
 export interface LinkedinHeaderProps {
-  userName: string
+  username: string
   date: Date
   post: string
 }

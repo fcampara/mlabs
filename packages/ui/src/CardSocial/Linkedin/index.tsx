@@ -10,12 +10,12 @@ import { CardLinkedindProps } from './types'
 const ComponentSocialLinkedin: React.FC<CardLinkedindProps> = ({
   image,
   date,
-  userName,
+  username,
   post
 }) => {
   return (
     <div>
-      <Header userName={userName} date={date} post={post} />
+      <Header username={username} date={date} post={post} />
       <Img src={image} />
       <Comments>5 comentários</Comments>
       <Divider />

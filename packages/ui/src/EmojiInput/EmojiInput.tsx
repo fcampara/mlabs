@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { Textarea, Container } from './styles'
 import { EmojiInputProps } from './types'
 import Button from '../Button'
@@ -33,7 +33,9 @@ const EMOJIS = [
 ]
 
 const ComponentEmojiInput: React.FC<EmojiInputProps> = ({
-  onChange
+  value,
+  onChange,
+  placeholder
 }) => {
   const textAreaRef = useRef<HTMLDivElement>(null)
 
@@ -57,6 +59,11 @@ const ComponentEmojiInput: React.FC<EmojiInputProps> = ({
     onChange(textAreaRef.current.innerHTML)
     setPosition()
   }
+
+  useEffect(() => {
+    if (!textAreaRef.current || !value) return
+    textAreaRef.current.innerHTML = value
+  }, [])
 
   return (
     <Container>
@@ -82,6 +89,7 @@ const ComponentEmojiInput: React.FC<EmojiInputProps> = ({
       </Popover>
 
       <Textarea
+        placeholder={placeholder}
         contentEditable
         ref={textAreaRef}
         onInput={event =>

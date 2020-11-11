@@ -1,5 +1,5 @@
 export interface InstagramProps {
-  userName: string
+  username: string
   image: string
   post: string
 }

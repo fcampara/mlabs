@@ -3,12 +3,15 @@ import { useDropzone } from 'react-dropzone'
 import { Container, Message } from './styles'
 import Button from '../Button'
 import uploaderSVG from '../assets/icons/uploader.svg'
+import { FileInputProps } from './types'
 
-const ComponentFileInput: React.FC = () => {
+const ComponentFileInput: React.FC<FileInputProps> = ({
+  onChange
+}) => {
   const onDrop = (acceptedFiles: any) => {
-    console.log(acceptedFiles)
-    // Do something with the files
+    onChange(acceptedFiles)
   }
+
   const { getRootProps, open, getInputProps } = useDropzone(
     {
       onDrop,

@@ -6,23 +6,29 @@ import { formatDatePTBR } from '../../../DateInput/utils'
 
 const ComponentLinkedinHeader: React.FC<LinkedinHeaderProps> = ({
   post,
-  userName,
+  username,
   date
 }) => {
   const formattedDate = useMemo(
     () => formatDatePTBR(date, 'long'),
-    []
+    [date]
   )
+
   return (
     <HeaderContainer>
       <div className="linkedin__title">
         <img className="linkedin__logo" src={LinkedinSVG} />
-        <span>{userName}</span>
+        <span>{username}</span>
         <span className="linkedin__date">
           {formattedDate}
         </span>
       </div>
-      <span className="linkedin__post">{post}</span>
+      <span
+        className="linkedin__post"
+        dangerouslySetInnerHTML={{
+          __html: post
+        }}
+      />
     </HeaderContainer>
   )
 }

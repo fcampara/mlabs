@@ -34,10 +34,10 @@ export const MONTHS = [
 
 export const formatDatePTBR = (
   date: Date,
-  month: 'long' | '2-digit' = '2-digit'
+  month?: 'long' | '2-digit'
 ) => {
   return new Intl.DateTimeFormat('pt-BR', {
     day: '2-digit',
-    month
+    month: month || '2-digit'
   }).format(date)
 }

@@ -21,7 +21,7 @@ export const ComponentDateInput: React.FC<DateInputProps> = ({
       <DayPickerInput
         placeholder="DD/MM"
         value={value}
-        formatDate={formatDatePTBR}
+        formatDate={date => formatDatePTBR(date)}
         format="LL"
         onDayChange={day => onChange(day)}
         dayPickerProps={{

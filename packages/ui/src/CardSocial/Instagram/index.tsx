@@ -9,9 +9,8 @@ import { InstagramProps } from './types'
 const ComponentSocialInstagram: React.FC<InstagramProps> = ({
   post,
   image,
-  userName
+  username
 }) => {
-  console.log(post)
   return (
     <Container>
       <div className="instagram__header">
@@ -19,7 +18,7 @@ const ComponentSocialInstagram: React.FC<InstagramProps> = ({
           className="instagram__logo"
           src={InstagramLogoSVG}
         />
-        <span>{userName}</span>
+        <span>{username}</span>
       </div>
       <img className="instagram__image" src={image} />
       <div className="instagram__footer">
@@ -30,7 +29,12 @@ const ComponentSocialInstagram: React.FC<InstagramProps> = ({
           </div>
           <img src={MarkSVG} />
         </div>
-        <div className="instagram__post">{post}</div>
+        <div
+          className="instagram__post"
+          dangerouslySetInnerHTML={{
+            __html: post
+          }}
+        />
       </div>
     </Container>
   )

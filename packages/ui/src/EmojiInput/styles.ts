@@ -28,7 +28,9 @@ export const Textarea = styled.div`
   background: white;
   min-height: 150px;
 
-  &::placeholder {
+  &:empty:before {
+    content: '${({ placeholder }) => placeholder}';
+    font-size: 14px;
     color: #4f4f4f;
   }
 `

@@ -16,4 +16,6 @@ const Template: Story<EmojiInputProps> = args => (
 )
 
 export const Primary = Template.bind({})
-Primary.args = {}
+Primary.args = {
+  placeholder: 'Exemplo de placeholder'
+}

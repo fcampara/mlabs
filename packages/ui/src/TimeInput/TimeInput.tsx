@@ -13,7 +13,7 @@ const ComponentTimeInput: React.FC<TimeInputProps> = ({
   ) => {
     const formattedTime = formatTime(event.target.value)
     event.target.value = formattedTime
-    onChange(event)
+    onChange(formattedTime)
   }
 
   return (

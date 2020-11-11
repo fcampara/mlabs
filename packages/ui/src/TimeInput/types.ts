@@ -1,10 +1,4 @@
-import {
-  ChangeEventHandler,
-  InputHTMLAttributes
-} from 'react'
-
-export interface TimeInputProps
-  extends InputHTMLAttributes<HTMLInputElement> {
+export interface TimeInputProps {
   value: string
-  onChange: ChangeEventHandler<HTMLInputElement>
+  onChange: (time: string) => void
 }
