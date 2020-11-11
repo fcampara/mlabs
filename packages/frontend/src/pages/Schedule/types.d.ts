@@ -1,7 +1,7 @@
 import { SocialNetwork } from 'src/@types/socialNetworks'
 
 export interface ISchedulePost {
-  scheduleIn: Date
+  publicationDate: Date
   scheduleAt: string
   socialMidias: SocialNetwork[]
   post: string

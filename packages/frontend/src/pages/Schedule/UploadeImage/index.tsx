@@ -1,8 +1,4 @@
-import React, {
-  useCallback,
-  useEffect,
-  useState
-} from 'react'
+import React, { useCallback, useState } from 'react'
 import { Card, FileInput } from '@mlabs/ui'
 import 'src/pages/Schedule/UploadeImage/styles.css'
 import firebase from 'src/lib/firebase'
@@ -10,7 +6,7 @@ import { useFormContext } from 'react-hook-form'
 import { FORM_NAME } from 'src/pages/Schedule/formInfo'
 const ComponentUploadImage: React.FC = () => {
   const [loading, setLoading] = useState(false)
-  const { setValue, register } = useFormContext()
+  const { setValue } = useFormContext()
 
   const setRefStorageName = useCallback((name: string) => {
     return `/posts/images/${name}-${new Date().toISOString()}`
@@ -38,10 +34,6 @@ const ComponentUploadImage: React.FC = () => {
     },
     [setValue, setRefStorageName]
   )
-
-  useEffect(() => {
-    register(FORM_NAME.IMAGE_URL)
-  }, [])
 
   return (
     <Card

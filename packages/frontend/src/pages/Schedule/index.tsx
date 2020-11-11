@@ -8,12 +8,24 @@ import Footer from 'src/pages/Schedule/Footer'
 import 'src/pages/Schedule/styles.css'
 import { FormProvider, useForm } from 'react-hook-form'
 import { ISchedulePost } from 'src/pages/Schedule/types'
-import { defaultValues } from 'src/pages/Schedule/formInfo'
+import {
+  defaultValues,
+  FORM_NAME
+} from 'src/pages/Schedule/formInfo'
 import { Prompt } from 'react-router-dom'
+import { useLocalStorage } from 'src/hooks/useLocalStorage'
+import { LOCAL_STORAGE_SCHEDULE } from 'src/constants/localStorageKeys'
 
 const PageSchedule: React.FC = () => {
+  const { getLocalStorage } = useLocalStorage<
+    ISchedulePost
+  >(LOCAL_STORAGE_SCHEDULE)
+  const scheduleStoraged = getLocalStorage()
   const methods = useForm<ISchedulePost>({
-    defaultValues
+    defaultValues: {
+      ...defaultValues,
+      ...scheduleStoraged
+    }
   })
   const {
     reset,
@@ -30,13 +42,21 @@ const PageSchedule: React.FC = () => {
   )
 
   useEffect(() => {
+    const publicationDate =
+      scheduleStoraged?.publicationDate
+
     reset({
-      socialMidias: []
+      ...defaultValues,
+      ...scheduleStoraged,
+      [FORM_NAME.SCHEDULE_IN]: publicationDate
+        ? new Date(publicationDate)
+        : ''
     })
   }, [reset])
 
   useEffect(() => {
-    register('socialMidias')
+    register(FORM_NAME.SOCIAL_MIDIAS)
+    register(FORM_NAME.IMAGE_URL)
   }, [register])
 
   return (

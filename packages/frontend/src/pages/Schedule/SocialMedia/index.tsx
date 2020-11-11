@@ -36,7 +36,6 @@ const ComponentSocialMedia: React.FC = () => {
         ? socialMidias.splice(index, 1)
         : socialMidias.push(socialMidia)
 
-      console.log('setValue')
       setValue(FORM_NAME.SOCIAL_MIDIAS, socialMidias, {
         shouldDirty: true
       })

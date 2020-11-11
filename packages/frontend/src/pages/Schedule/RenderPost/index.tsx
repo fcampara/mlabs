@@ -19,12 +19,11 @@ const ComponentRenderPost: React.FC = () => {
   ) as ISchedulePost['socialMidias']
   const scheduleIn = watch(
     FORM_NAME.SCHEDULE_IN
-  ) as ISchedulePost['scheduleIn']
+  ) as ISchedulePost['publicationDate']
   const image = watch(
     FORM_NAME.IMAGE_URL
   ) as ISchedulePost['imageUrl']
 
-  console.log(socialMidias)
   return (
     <Card
       title="Visualização do post"

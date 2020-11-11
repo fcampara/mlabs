@@ -12,6 +12,10 @@
   background: var(--white);
 }
 
+.schedule__footer--success {
+  margin-left: 16px;
+}
+
 @media (max-width: 768px) {
   .schedule__footer {
     padding: 10px;

@@ -1,8 +1,8 @@
 export const FORM_NAME = {
   IMAGE_URL: 'media',
   POST: 'text',
-  SCHEDULE_AT: 'publicationDate',
-  SCHEDULE_IN: 'scheduleIn',
+  SCHEDULE_AT: 'scheduleAt',
+  SCHEDULE_IN: 'publicationDate',
   SOCIAL_MIDIAS: 'socialMidias',
   USERNAME: 'username'
 }

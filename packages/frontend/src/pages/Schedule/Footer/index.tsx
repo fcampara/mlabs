@@ -1,4 +1,8 @@
-import React, { useCallback, useMemo } from 'react'
+import React, {
+  useCallback,
+  useMemo,
+  useState
+} from 'react'
 import { Button } from '@mlabs/ui'
 import 'src/pages/Schedule/Footer/styles.css'
 import { useHistory } from 'react-router-dom'
@@ -7,9 +11,12 @@ import { useFormContext } from 'react-hook-form'
 import { FORM_NAME } from '../formInfo'
 import { ISchedulePost } from '../types'
 import { useWindowSize } from 'src/hooks/useWindowSize'
+import { useLocalStorage } from 'src/hooks/useLocalStorage'
 
 const ComponentFooter: React.FC = () => {
-  const { watch } = useFormContext()
+  const { setLocalStorage } = useLocalStorage('schedule')
+  const [saved, setSaved] = useState(false)
+  const { watch, getValues } = useFormContext()
   const socialMidias = watch(
     FORM_NAME.SOCIAL_MIDIAS
   ) as ISchedulePost['socialMidias']
@@ -18,12 +25,18 @@ const ComponentFooter: React.FC = () => {
   ) as ISchedulePost['scheduleAt']
   const scheduleIn = watch(
     FORM_NAME.SCHEDULE_IN
-  ) as ISchedulePost['scheduleIn']
+  ) as ISchedulePost['publicationDate']
   const history = useHistory()
   const { width } = useWindowSize()
   const isSmallScreen = useMemo(() => {
     return width <= 768
   }, [width])
+
+  const handleSaveDraft = useCallback(() => {
+    setLocalStorage(getValues())
+    setSaved(true)
+    setTimeout(() => setSaved(false), 1000)
+  }, [getValues])
 
   const goToHome = useCallback(() => {
     history.replace(HOME)
@@ -52,7 +65,15 @@ const ComponentFooter: React.FC = () => {
         label={draftLabel}
         variant="outline"
         size="sm"
-      />
+        onClick={handleSaveDraft}
+      >
+        {saved && (
+          <>
+            Salvo{' '}
+            <i className="schedule__footer--success fas fa-check" />
+          </>
+        )}
+      </Button>
       <Button
         label="Agendar"
         type="submit"
