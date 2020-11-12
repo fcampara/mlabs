@@ -1,6 +1,7 @@
 import React, {
   useCallback,
   useEffect,
+  useMemo,
   useState
 } from 'react'
 import SocialMedia from 'src/pages/Schedule/SocialMedia'
@@ -21,6 +22,7 @@ import { useLocalStorage } from 'src/hooks/useLocalStorage'
 import { LOCAL_STORAGE_SCHEDULE } from 'src/constants/localStorageKeys'
 import { storeSchedules } from 'src/services/schedule'
 import DialogSuccess from 'src/pages/Schedule/Success'
+import { ScheduleToStore } from 'src/@types/schedules'
 
 const PageSchedule: React.FC = () => {
   const {
@@ -29,10 +31,17 @@ const PageSchedule: React.FC = () => {
   } = useLocalStorage<ISchedulePost>(LOCAL_STORAGE_SCHEDULE)
   const [open, setOpen] = useState(false)
   const scheduleStoraged = getLocalStorage()
+  const publicationDate = useMemo(
+    () => scheduleStoraged?.publicationDate,
+    [scheduleStoraged]
+  )
   const methods = useForm<ISchedulePost>({
     defaultValues: {
       ...defaultValues,
-      ...scheduleStoraged
+      ...scheduleStoraged,
+      [FORM_NAME.PUBLICATION_DATE]: publicationDate
+        ? new Date(publicationDate)
+        : ''
     }
   })
   const {
@@ -55,9 +64,10 @@ const PageSchedule: React.FC = () => {
   }, [reset, removeLocalStorage])
   const onSubmit = useCallback(
     async (schedulePost: ISchedulePost) => {
+      console.log(schedulePost)
       const {
         scheduleAt,
-        socialMidias,
+        socialNetworks,
         ...restSchedulePost
       } = schedulePost
       const [hours, minutes] = scheduleAt.split(' : ')
@@ -65,9 +75,9 @@ const PageSchedule: React.FC = () => {
       schedulePost.publicationDate.setMinutes(
         Number(minutes)
       )
-      const schedule = {
+      const schedule: ScheduleToStore = {
         ...restSchedulePost,
-        socialNetworkKey: socialMidias.map(({ id }) => id)
+        socialNetworkKey: socialNetworks.map(({ id }) => id)
       }
 
       await storeSchedules(schedule)
@@ -78,21 +88,8 @@ const PageSchedule: React.FC = () => {
   )
 
   useEffect(() => {
-    const publicationDate =
-      scheduleStoraged?.publicationDate
-
-    reset({
-      ...defaultValues,
-      ...scheduleStoraged,
-      [FORM_NAME.SCHEDULE_IN]: publicationDate
-        ? new Date(publicationDate)
-        : ''
-    })
-  }, [reset, scheduleStoraged])
-
-  useEffect(() => {
     register(FORM_NAME.SOCIAL_MIDIAS)
-    register(FORM_NAME.IMAGE_URL)
+    register(FORM_NAME.MEDIA)
   }, [register])
 
   return (

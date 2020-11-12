@@ -1,8 +1,9 @@
-import { SocialMidias } from './socialMidias'
+import { SocialMedias } from './socialMedias'
 
+export type SocialNetworks = 'Instagram' | 'Linkedin'
 export interface SocialNetwork {
   id: number
-  name: SocialMidias
+  name: SocialMedias
   icon: string
   status: string
 }

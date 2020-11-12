@@ -1,5 +1,9 @@
+import {
+  Schedule,
+  ScheduleToStore,
+  ScheduleResponse
+} from 'src/@types/schedules'
 import { LOCAL_STORAGE_SCHEDULES } from 'src/constants/localStorageKeys'
-import { ISchedulePost } from 'src/pages/Schedule/types'
 import api from 'src/services/api'
 import {
   getLocalStorage,
@@ -8,14 +12,30 @@ import {
 
 const URL = '/schedules'
 
-export const storeSchedules = async (schedule: any) => {
-  const { data } = await api.post(URL, schedule)
+export const storeSchedules = async (
+  schedule: ScheduleToStore
+) => {
+  const newSchedule = {
+    ...schedule,
+    statusKey: 1,
+    id: Math.floor(Math.random() * 1000) + 100
+  }
   const schedules =
-    getLocalStorage<ISchedulePost[]>(
-      LOCAL_STORAGE_SCHEDULES
-    ) || []
-  schedules.push(data)
+    getLocalStorage<Schedule[]>(LOCAL_STORAGE_SCHEDULES) ||
+    []
+  schedules.push(newSchedule)
   setLocalStorage(LOCAL_STORAGE_SCHEDULES, schedules)
 
-  return data
+  return schedules
+}
+
+export const getAllSchedules = async () => {
+  const { data } = await api.get<ScheduleResponse>(URL)
+  const schedules = data.data
+
+  const storagedSchedules =
+    getLocalStorage<Schedule[]>(LOCAL_STORAGE_SCHEDULES) ||
+    []
+
+  return [...schedules, ...storagedSchedules]
 }

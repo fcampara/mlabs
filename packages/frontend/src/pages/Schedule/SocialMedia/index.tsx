@@ -16,40 +16,40 @@ const ComponentSocialMedia: React.FC = () => {
     SocialNetwork[]
   >()
   const { setValue, watch } = useFormContext()
-  const formSocialMidias = watch(
+  const formSocialNetworks = watch(
     FORM_NAME.SOCIAL_MIDIAS
-  ) as ISchedulePost['socialMidias']
+  ) as ISchedulePost['socialNetworks']
   const getIndexSocialMidia = useCallback(
-    (socialMidia: SocialNetwork) => {
-      return formSocialMidias.findIndex(
-        midia => midia.id === socialMidia.id
+    (socialNetwork: SocialNetwork) => {
+      return formSocialNetworks.findIndex(
+        media => media.id === socialNetwork.id
       )
     },
-    [formSocialMidias]
+    [formSocialNetworks]
   )
 
-  const handleSelectSocialMidia = useCallback(
+  const handleSelectSocialMedia = useCallback(
     (socialMidia: SocialNetwork) => () => {
-      const socialMidias = formSocialMidias
+      const socialNetworks = formSocialNetworks
       const index = getIndexSocialMidia(socialMidia)
       index >= 0
-        ? socialMidias.splice(index, 1)
-        : socialMidias.push(socialMidia)
+        ? socialNetworks.splice(index, 1)
+        : socialNetworks.push(socialMidia)
 
-      setValue(FORM_NAME.SOCIAL_MIDIAS, socialMidias, {
+      setValue(FORM_NAME.SOCIAL_MIDIAS, socialNetworks, {
         shouldDirty: true
       })
     },
-    [setValue, getIndexSocialMidia]
+    [formSocialNetworks, setValue, getIndexSocialMidia]
   )
 
   const isSelected = useCallback(
     (socialMidia: SocialNetwork) => {
-      return formSocialMidias.some(
+      return formSocialNetworks.some(
         midia => socialMidia.id === midia.id
       )
     },
-    [formSocialMidias]
+    [formSocialNetworks]
   )
 
   useEffect(() => {
@@ -69,7 +69,7 @@ const ComponentSocialMedia: React.FC = () => {
             disabled={socialNetwork.status === 'disabled'}
             key={socialNetwork.id}
             selected={isSelected(socialNetwork)}
-            onClick={handleSelectSocialMidia(socialNetwork)}
+            onClick={handleSelectSocialMedia(socialNetwork)}
           >
             <i className={`fab fa-${socialNetwork.icon}`} />
           </IconButton>

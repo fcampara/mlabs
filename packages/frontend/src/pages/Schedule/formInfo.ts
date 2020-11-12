@@ -1,17 +1,17 @@
 export const FORM_NAME = {
-  IMAGE_URL: 'media',
-  POST: 'text',
+  MEDIA: 'media',
+  TEXT: 'text',
   SCHEDULE_AT: 'scheduleAt',
-  SCHEDULE_IN: 'publicationDate',
-  SOCIAL_MIDIAS: 'socialMidias',
+  PUBLICATION_DATE: 'publicationDate',
+  SOCIAL_MIDIAS: 'socialNetworks',
   USERNAME: 'username'
 }
 
 export const defaultValues = {
-  [FORM_NAME.IMAGE_URL]: '',
-  [FORM_NAME.POST]: '',
+  [FORM_NAME.MEDIA]: '',
+  [FORM_NAME.TEXT]: '',
   [FORM_NAME.SCHEDULE_AT]: '',
-  [FORM_NAME.SCHEDULE_IN]: '',
+  [FORM_NAME.PUBLICATION_DATE]: '',
   [FORM_NAME.SOCIAL_MIDIAS]: [],
   [FORM_NAME.USERNAME]: 'Anselmo Carlos'
 }

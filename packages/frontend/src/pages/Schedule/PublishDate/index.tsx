@@ -12,7 +12,7 @@ const ComponentPublishDate: React.FC = () => {
     >
       <div className="schedule--publish-date container">
         <Controller
-          name={FORM_NAME.SCHEDULE_IN}
+          name={FORM_NAME.PUBLICATION_DATE}
           render={({ value, onChange }) => (
             <DateInput value={value} onChange={onChange} />
           )}

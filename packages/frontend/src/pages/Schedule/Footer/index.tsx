@@ -12,31 +12,32 @@ import { FORM_NAME } from '../formInfo'
 import { ISchedulePost } from '../types'
 import { useWindowSize } from 'src/hooks/useWindowSize'
 import { useLocalStorage } from 'src/hooks/useLocalStorage'
+import { SCREEN_MD } from 'src/constants/mediaQueries'
 
 const ComponentFooter: React.FC = () => {
   const { setLocalStorage } = useLocalStorage('schedule')
   const [saved, setSaved] = useState(false)
   const { watch, getValues } = useFormContext()
-  const socialMidias = watch(
+  const socialNetworks = watch(
     FORM_NAME.SOCIAL_MIDIAS
-  ) as ISchedulePost['socialMidias']
+  ) as ISchedulePost['socialNetworks']
   const scheduleAt = watch(
     FORM_NAME.SCHEDULE_AT
   ) as ISchedulePost['scheduleAt']
-  const scheduleIn = watch(
-    FORM_NAME.SCHEDULE_IN
+  const publicationDate = watch(
+    FORM_NAME.PUBLICATION_DATE
   ) as ISchedulePost['publicationDate']
   const history = useHistory()
   const { width } = useWindowSize()
   const isSmallScreen = useMemo(() => {
-    return width <= 768
+    return width <= SCREEN_MD
   }, [width])
 
   const handleSaveDraft = useCallback(() => {
     setLocalStorage(getValues())
     setSaved(true)
     setTimeout(() => setSaved(false), 1000)
-  }, [getValues])
+  }, [getValues, setLocalStorage])
 
   const goToHome = useCallback(() => {
     history.replace(HOME)
@@ -49,9 +50,11 @@ const ComponentFooter: React.FC = () => {
 
   const disableButton = useMemo(() => {
     return (
-      !socialMidias.length || !scheduleAt || !scheduleIn
+      !socialNetworks.length ||
+      !scheduleAt ||
+      !publicationDate
     )
-  }, [socialMidias, scheduleAt, scheduleIn])
+  }, [socialNetworks, scheduleAt, publicationDate])
 
   return (
     <footer className="schedule__footer">

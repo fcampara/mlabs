@@ -11,7 +11,7 @@ const ComponentTextPost: React.FC = () => {
       className="schedule--text-post"
     >
       <Controller
-        name={FORM_NAME.POST}
+        name={FORM_NAME.TEXT}
         render={({ value, onChange }) => (
           <EmojiInput
             placeholder="Aqui vai o texto descritivo desse post"

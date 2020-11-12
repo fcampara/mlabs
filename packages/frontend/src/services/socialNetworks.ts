@@ -7,6 +7,7 @@ export const getAllSocialNetworks = async () => {
   const { data } = await api.get<SocialNetworksResponse>(
     URL
   )
+
   const socialNetworks = data.data
   return socialNetworks
 }

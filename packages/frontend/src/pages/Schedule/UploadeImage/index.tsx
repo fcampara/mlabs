@@ -27,7 +27,7 @@ const ComponentUploadImage: React.FC = () => {
         () => setLoading(false),
         async () => {
           const imageUrl = await uploadTask.snapshot.ref.getDownloadURL()
-          setValue(FORM_NAME.IMAGE_URL, imageUrl)
+          setValue(FORM_NAME.MEDIA, imageUrl)
           setLoading(false)
         }
       )

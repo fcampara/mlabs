@@ -1,0 +1,152 @@
+:root {
+  --border-table: 1px solid #BDBDBD;
+}
+
+.schedules {
+  overflow-x:auto;
+}
+
+.schedules__order {
+  cursor: pointer;
+  transition: transform .5s ease-in-out;
+}
+
+.schedules__order > .DESC, .schedules__order > .ASC {
+  transition: transform .5s ease-in-out;
+}
+
+.schedules__order > .DESC {
+  transform: rotate(180deg);
+}
+
+.schedules__order > .ASC {
+  transform: rotate(360deg);
+}
+
+.schedules--title {
+  margin-bottom: 32px
+}
+
+.schedule--media {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.schedules--table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.schedules--table tr {
+  color: #4F4F4F
+}
+
+.schedules--table table, th {
+  border: var(--border-table);
+}
+
+.schedules--table table, td {
+  border-right: var(--border-table);
+  border-left: var(--border-table);
+}
+
+.schedules--table table, tr:last-child {
+  border-bottom: var(--border-table);
+}
+
+.schedules--table th{
+  border-bottom-width: 3px;
+  height: 65px;
+}
+
+.schedules--table__header {
+  background: #FFFFFF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.schedules--table__header th {
+  font-size: 16px;
+  padding: 0px 9px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.schedules--table tbody td {
+  padding: 22px;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.schedules--table tbody tr {
+  background: #FFFFFF;
+}
+
+.schedules--table tbody tr:nth-child(odd) {
+  background: #F2F2F2;
+  padding: 22px;
+}
+
+.schedules--status {
+  display: flex;
+  align-items: center;
+  grid-gap: 6px;
+}
+
+.schedules--status > .icon {
+  background: black;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.schedules--social-network {
+  display: flex;
+  grid-gap: 16px;
+  place-content: center;
+}
+
+.schedules--social-network__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-gap: 16px;
+  width: 33px;
+  height: 33px;
+  border-radius: 50%;
+  color: white;
+  font-size: 16px;
+}
+
+.schedules--social-network__icon.fa-instagram {
+  background: #D60F86
+}
+
+.schedules--social-network__icon.fa-linkedin-in {
+  background: #3A70DA
+}
+
+.schedules--preview {
+  font-size: 14px;
+  line-height: 21px;
+  text-decoration-line: underline;
+  cursor: pointer;
+  color: #1661F3;
+}
+
+.schedules--preview__card {
+  padding: 8px;
+}
+
+.schedules--preview__button {
+  margin-top: 16px;
+  width: 100%
+}
+
+.schedules--preview__socials {
+    display: flex;
+    place-content: center;
+    grid-gap: 16px;
+    margin-bottom: 8px;
+}
