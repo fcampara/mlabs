@@ -7,6 +7,7 @@
   "scripts": {
     "dev": "start-storybook -p 6006 -s public --no-dll",
     "build": "tsc -p .",
+    "build:storybook": "build-storybook -o build",
     "test": "jest"
   },
   "devDependencies": {

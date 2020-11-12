@@ -139,7 +139,7 @@
   padding: 8px;
 }
 
-.schedules--preview__button {
+.schedules--preview__card > .schedules--preview__button {
   margin-top: 16px;
   width: 100%
 }

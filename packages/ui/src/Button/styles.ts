@@ -71,7 +71,6 @@ export const Button = styled.button`
   border: none;
   border-radius: 4px;
   padding: 8px 12px;
-  width: 100%;
   transition: color 0.5s ease;
   transition: background-color 0.5s ease;
   width: 184px;

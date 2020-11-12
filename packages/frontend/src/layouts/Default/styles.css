@@ -15,7 +15,7 @@
   place-items: center;
 }
 
-.header__menu {
+.header__link > .header__menu {
   display: none;
 }
 
@@ -41,7 +41,7 @@
      display: none;
   }
 
-  .header__menu {
+  .header__link >  .header__menu {
     display: block;
   }
 
