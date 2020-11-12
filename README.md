@@ -55,6 +55,8 @@ Projeto está divido em 3 pacotes sendo eles:
 [X] - Essa tabela deve ser responsiva
 [X] - Deverá ser possível ordenar a tabela por data e status
 [X] - A informação sobre o campo status deverá ser consumido de um JSON (modelo abaixo na seção API) para um cruzamento de informação do statu no post com sua respectiva descrição
+[ ] - Sua aplicação pode estar bem embasada em performance web seguindo as boas práticas de [https://web.dev/vitals/](https://web.dev/vitals/) um bom ranking no teste pode ser algo a mais: [https://web.dev/measure/](https://web.dev/measure/)
+[ ] - Acessibilidade: seguir as boas práticas
 [X] - Quando o usuário clicar em "Cancelar", verificar se algum dado foi preenchido no form de agendamento e caso tenha sido, informar ao usuário que ele perderá essas informações se desejar prossseguir
 [X] - Ao clicar no botão "Salvar rascunho", sua aplicação deverá persistir os dados desse post de alguma forma em que seja possível fecharmos a aba, ir novamente a tela inicial da sua aplicação, clicar em "Agendar post" e as informações salvas em Rascunho daquele último post deverão aparecer ali
 [ ] - Implemente um componente que filtre a tabela por status, possibilitando o usuário exibir, por exemplo, somente os posts com status "Não aprovado". O design desse componente fica livre para sua escolha.
