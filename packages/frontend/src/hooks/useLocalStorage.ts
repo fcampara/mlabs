@@ -1,16 +1,29 @@
-export function useLocalStorage<T>(key: any) {
-  const setLocalStorage = (value: any) => {
-    value &&
-      localStorage.setItem(key, JSON.stringify(value))
-  }
+import { useCallback } from 'react'
+import {
+  setLocalStorage as utilsSetLocalStorage,
+  getLocalStorage as utilsGetLocalStorage,
+  removeLocalStorage as utilsRemoveLocalStorage
+} from 'src/utils/localStorage'
 
-  const getLocalStorage = (): T => {
-    const value = localStorage.getItem(key)
-    return value ? JSON.parse(value) : value
-  }
+export function useLocalStorage<T>(key: any) {
+  const setLocalStorage = useCallback(
+    (value: any) => {
+      utilsSetLocalStorage(key, value)
+    },
+    [key]
+  )
+
+  const getLocalStorage = useCallback((): T => {
+    return utilsGetLocalStorage<T>(key)
+  }, [key])
+
+  const removeLocalStorage = useCallback(() => {
+    utilsRemoveLocalStorage(key)
+  }, [key])
 
   return {
     setLocalStorage,
-    getLocalStorage
+    getLocalStorage,
+    removeLocalStorage
   }
 }

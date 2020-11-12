@@ -1,0 +1,17 @@
+.schedule--dialog {
+  display: flex;
+  flex-direction: column;
+  background-color: #FAFAFA;
+  align-items: center;
+  justify-content: center;
+  max-width: 680px;
+  width: 100%;
+  padding: 64px;
+}
+
+.schedule--dialog > .schedule--dialog__message {
+  color: #4F4F4F;
+  font-size: 24px;
+  margin-bottom: 21px;
+  text-align: center;
+}
