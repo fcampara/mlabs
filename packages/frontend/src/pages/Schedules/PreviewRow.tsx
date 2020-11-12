@@ -10,16 +10,13 @@ import React, {
   useMemo,
   useState
 } from 'react'
-import { Schedule } from 'src/@types/schedules'
-import {
-  SocialNetwork,
-  SocialNetworks
-} from 'src/@types/socialNetworks'
+import { SocialNetworks } from 'src/@types/socialNetworks'
+import { TableScheduleSocialNetworkRow } from 'src/pages/Schedules/types'
 
-const ComponentPreviewRow: React.FC<{
-  schedule: Schedule
-  socialNetworks: SocialNetwork[]
-}> = ({ schedule, socialNetworks }) => {
+const ComponentPreviewRow: React.FC<TableScheduleSocialNetworkRow> = ({
+  schedule,
+  socialNetworks
+}) => {
   const [open, setOpen] = useState(false)
   const [
     selectedSocialNetwork,

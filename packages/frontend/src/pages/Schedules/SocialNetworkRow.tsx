@@ -1,11 +1,10 @@
 import React, { useCallback } from 'react'
-import { Schedule } from 'src/@types/schedules'
-import { SocialNetwork } from 'src/@types/socialNetworks'
+import { TableScheduleSocialNetworkRow } from 'src/pages/Schedules/types'
 
-const ComponentSocialNetworkRow: React.FC<{
-  schedule: Schedule
-  socialNetworks: SocialNetwork[]
-}> = ({ schedule, socialNetworks }) => {
+const ComponentSocialNetworkRow: React.FC<TableScheduleSocialNetworkRow> = ({
+  schedule,
+  socialNetworks
+}) => {
   const getIconSocialNetwork = useCallback(
     (id: number) => {
       return socialNetworks?.find(

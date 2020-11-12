@@ -1,9 +1,10 @@
 import React from 'react'
+import { TableScheduleHeader } from 'src/pages/Schedules/types'
 
-const ComponentScheduleHeader: React.FC<{
-  onChangeOrder: () => void
-  orderBy: 'ASC' | 'DESC'
-}> = ({ onChangeOrder, orderBy }) => {
+const ComponentScheduleHeader: React.FC<TableScheduleHeader> = ({
+  onChangeOrder,
+  orderBy
+}) => {
   return (
     <thead className="schedules--table__header">
       <tr>

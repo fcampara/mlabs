@@ -3,13 +3,13 @@ import React, {
   useEffect,
   useState
 } from 'react'
-import { Schedule } from 'src/@types/schedules'
 import { ScheduleStatus } from 'src/@types/scheduleStatus'
 import { getAllScheduleStatus } from 'src/services/scheduleStatus'
+import { TableScheduleRow } from 'src/pages/Schedules/types'
 
-const ComponentStatusRow: React.FC<{
-  schedule: Schedule
-}> = ({ schedule }) => {
+const ComponentStatusRow: React.FC<TableScheduleRow> = ({
+  schedule
+}) => {
   const [scheduleStatus, setScheduleStatus] = useState<
     ScheduleStatus[]
   >([])
