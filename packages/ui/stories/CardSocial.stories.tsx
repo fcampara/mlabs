@@ -20,7 +20,7 @@ Instagram.args = {
   userName: name.findName(),
   post: lorem.paragraph(),
   image: image.imageUrl(),
-  social: 'instagram'
+  social: 'Instagram'
 }
 
 export const Linkedin = Template.bind({})
@@ -29,5 +29,5 @@ Linkedin.args = {
   date: date.future(),
   post: lorem.paragraph(),
   image: image.imageUrl(),
-  social: 'linkedin'
+  social: 'Linkedin'
 }

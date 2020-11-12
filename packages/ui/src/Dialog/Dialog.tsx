@@ -14,7 +14,6 @@ export const ComponentDialog: React.FC<DialogProps> = ({
     dialog.current?.close()
   }, [open, dialog])
 
-  console.log(props)
   return (
     <Dialog {...props} ref={dialog}>
       {children}

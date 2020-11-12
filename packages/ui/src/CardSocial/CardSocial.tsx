@@ -1,9 +1,4 @@
-import React, {
-  lazy,
-  useEffect,
-  useState,
-  Suspense
-} from 'react'
+import React, { lazy, Suspense, useMemo } from 'react'
 import {
   CardSocialFileProps,
   CardSocialProps
@@ -19,13 +14,14 @@ const ComponentCardSocial: React.FC<CardSocialProps> = ({
   social,
   ...props
 }) => {
-  const [Card, setCard] = useState<React.FC>()
+  const Card = useMemo(() => lazy(() => FILES[social]), [
+    social
+  ])
 
-  useEffect(() => {
-    const card = lazy(() => FILES[social])
+  if (!social || !Card) {
+    return <div> - Rede social não cadastrada - </div>
+  }
 
-    setCard(card)
-  }, [])
   return (
     <Suspense fallback="">
       <Container>{Card && <Card {...props} />}</Container>

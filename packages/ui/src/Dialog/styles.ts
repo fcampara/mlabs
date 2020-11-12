@@ -11,6 +11,8 @@ export const Dialog = styled.dialog`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  max-height: 100vh;
+  overflow: auto;
 
   &::backdrop {
     position: fixed;

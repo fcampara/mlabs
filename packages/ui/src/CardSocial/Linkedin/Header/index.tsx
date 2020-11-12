@@ -10,7 +10,7 @@ const ComponentLinkedinHeader: React.FC<LinkedinHeaderProps> = ({
   date
 }) => {
   const formattedDate = useMemo(
-    () => formatDatePTBR(date, 'long'),
+    () => date && formatDatePTBR(date, 'long'),
     [date]
   )
 
