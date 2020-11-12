@@ -9,7 +9,8 @@ module.exports = {
     'standard',
     'prettier/@typescript-eslint',
     'prettier/standard',
-    'prettier/react'
+    'prettier/react',
+    'plugin:react-hooks/recommended'
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -21,6 +22,8 @@ module.exports = {
   },
   plugins: ['react', 'prettier', '@typescript-eslint'],
   rules: {
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn',
     'space-before-function-paren': 'off',
     'prettier/prettier': 'error',
     'no-use-before-define': 'off',
