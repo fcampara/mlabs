@@ -7,8 +7,10 @@ export const Dialog = styled.dialog`
   border-radius: 4px;
   max-width: 880px;
   background: white;
+  position: fixed;
   top: 50%;
-  bottom: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
   &::backdrop {
     position: fixed;
@@ -17,6 +19,10 @@ export const Dialog = styled.dialog`
     right: 0;
     bottom: 0;
     background: rgba(0, 0, 0, 0.1);
+  }
+
+  &:not([open]) {
+    display: none;
   }
 `
 

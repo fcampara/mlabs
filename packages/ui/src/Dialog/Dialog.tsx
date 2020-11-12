@@ -3,8 +3,9 @@ import { Dialog } from './styles'
 import { DialogProps } from './types'
 
 export const ComponentDialog: React.FC<DialogProps> = ({
+  open,
   children,
-  open
+  ...props
 }) => {
   const dialog = useRef<HTMLDialogElement | null>(null)
 
@@ -13,7 +14,12 @@ export const ComponentDialog: React.FC<DialogProps> = ({
     dialog.current?.close()
   }, [open, dialog])
 
-  return <Dialog ref={dialog}>{children}</Dialog>
+  console.log(props)
+  return (
+    <Dialog {...props} ref={dialog}>
+      {children}
+    </Dialog>
+  )
 }
 
 export default React.memo(ComponentDialog)
