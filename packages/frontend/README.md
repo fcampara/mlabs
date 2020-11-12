@@ -15,14 +15,15 @@ Primeiro é necessário instalar todas as dependências. (Caso já tenha instala
 
 ## Desenvolvimento
 
-Para executar o projeto em desenvolvimento, basta rodar o seguinte comando
+Para executar o projeto em desenvolvimento, necessário fazer um copia do .env.dev gerando um novo .env, preencher todas as informações no arquivo (são conexão com o firebase para poder subir images). Depois executar o JSON server.
 
 ```bash
+  cp .env.dev .env
   yarn dev
+  yarn server
 ```
 
-Projeto será iniciado na URL: [http://localhost:3000/](http://localhost:3000/)
- disponível para o deploy
+Projeto será iniciado na URL [http://localhost:3000/](http://localhost:3000/) e o servidor na URL [http://localhost:3001/](http://localhost:3001/)
 
 ## Deploy
 
